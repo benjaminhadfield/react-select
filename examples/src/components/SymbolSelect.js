@@ -26,7 +26,7 @@ var StatesField = createClass({
 		};
 	},
 	updateValue (newValue) {
-		console.log('State changed to ' + Symbol.keyFor(newValue) + ' (type: ' + typeof newValue + ')');
+		console.log('Symbol changed to ' + Symbol.keyFor(newValue) + ' (type: ' + typeof newValue + ')');
 		this.setState({
 			selectValue: newValue
 		});
