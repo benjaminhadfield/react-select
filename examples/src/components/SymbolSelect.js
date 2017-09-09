@@ -5,7 +5,7 @@ import Select from 'react-select';
 
 const SYMBOLS = require('../data/symbols');
 
-var StatesField = createClass({
+var SymbolField = createClass({
 	displayName: 'SymbolField',
 	propTypes: {
 		label: PropTypes.string,
@@ -31,8 +31,8 @@ var StatesField = createClass({
 			selectValue: newValue
 		});
 	},
-	focusStateSelect () {
-		this.refs.stateSelect.focus();
+	focusSymbolSelect () {
+		this.refs.symbolSelect.focus();
 	},
 	toggleCheckbox (e) {
 		let newState = {};
@@ -43,10 +43,10 @@ var StatesField = createClass({
 		return (
 			<div className="section">
 				<h3 className="section-heading">{this.props.label}</h3>
-				<Select ref="stateSelect" autofocus options={SYMBOLS} simpleValue clearable={this.state.clearable} name="selected-state" disabled={this.state.disabled} value={this.state.selectValue} onChange={this.updateValue} searchable={this.state.searchable} />
+				<Select ref="symbolSelect" autofocus options={SYMBOLS} simpleValue clearable={this.state.clearable} name="selected-state" disabled={this.state.disabled} value={this.state.selectValue} onChange={this.updateValue} searchable={this.state.searchable} />
 
 				<div style={{ marginTop: 14 }}>
-					<button type="button" onClick={this.focusStateSelect}>Focus Select</button>
+					<button type="button" onClick={this.focusSymbolSelect}>Focus Select</button>
 					<label className="checkbox" style={{ marginLeft: 10 }}>
 						<input type="checkbox" className="checkbox-control" name="searchable" checked={this.state.searchable} onChange={this.toggleCheckbox}/>
 						<span className="checkbox-label">Searchable</span>
@@ -66,4 +66,4 @@ var StatesField = createClass({
 });
 
 
-module.exports = StatesField;
+module.exports = SymbolField;
