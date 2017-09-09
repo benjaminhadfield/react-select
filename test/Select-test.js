@@ -1180,6 +1180,32 @@ describe('Select', () => {
 		});
 	});
 
+	describe('with values as symbols', () => {
+		beforeEach(() => {
+
+			options = [
+				{ value: Symbol.for('one'), label: 'One' },
+				{ value: Symbol.for('two'), label: 'Two' },
+				{ value: Symbol.for('three'), label: 'Three' },
+			]
+
+			// Render an instance of the component
+			wrapper = createControlWithWrapper({
+				name: 'symbol-select-control',
+				value: Symbol.for('one'),
+				options: options,
+				searchable: true
+			})
+		});
+
+		it('starts with the given value', () => {
+
+			var node = ReactDOM.findDOMNode(instance);
+			expect(node, 'queried for', DISPLAYED_SELECTION_SELECTOR,
+				'to have items satisfying', 'to have text', 'One');
+		});
+	});
+
 	describe('with options and value', () => {
 		beforeEach(() => {
 
