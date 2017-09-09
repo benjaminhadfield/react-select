@@ -15,10 +15,12 @@ import NumericSelect from './components/NumericSelect';
 import BooleanSelect from './components/BooleanSelect';
 import Virtualized from './components/Virtualized';
 import States from './components/States';
+import SymbolSelect from './components/SymbolSelect';
 
 ReactDOM.render(
 	<div>
 		<States label="States" searchable />
+		<SymbolSelect label="Symbols" searchable />
 		<Multiselect label="Multiselect" />
 		<Virtualized label="Virtualized" />
 		<Contributors label="Contributors (Async)" />

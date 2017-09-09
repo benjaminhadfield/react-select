@@ -34,7 +34,7 @@ function menuRenderer ({
 				isDisabled={option.disabled}
 				isFocused={isFocused}
 				isSelected={isSelected}
-				key={`option-${i}-${option[valueKey]}`}
+				key={`option-${i}-${option[valueKey].toString()}`}
 				onFocus={onFocus}
 				onSelect={onSelect}
 				option={option}
